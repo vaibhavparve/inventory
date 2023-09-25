@@ -1,0 +1,29 @@
+# Getting Started
+Just run the application in intellij with default settings, application should run on port 8080.
+//com.library.inventory.InventoryApplication
+
+### Functionality provided
+Application provides 6 apis to perform the multiple operations:
+1. http://localhost:8080/api/v1/inventory/overdue -- provides the list of all the overdue items books, VCR, CD, DVD
+2. http://localhost:8080/api/v1/inventory/available/{itemType}/{title} --provides the list of available copies
+of item type(BOOK, VCR, DVD) to lend.
+3. http://localhost:8080/api/v1/inventory/borrow/{itemType}/{title}/{userId} -- api to borrow the item from library
+4. http://localhost:8080/api/v1/inventory/return/{itemType}/{title}/{userId} -- api to return the borrowed item from library
+5. http://localhost:8080/api/v1/inventory/available --api to list all the avaible inventory in the library
+6. http://localhost:8080/api/v1/user/borrowed/{userId} -- api to list all the borrowed items by a user
+
+### scope for improvement
+1. Could have used abstract class for baseInventory and dervived classes for Books, VCR, DVD, but time limitation and
+did not see any specific properties for other types, so used itemType enum for differentiating between the types of items.
+2. Can provide more custom exceptions/improvise.
+3. Could not complete the part of upload from csv, hence to have some static data to test. used constructors. //of course this is not prod ready,
+InitialInventoryServiceImpl, UserServiceImpl is intended for creating the initial inventory be it by uploading from CSV or providing new endpoints
+to create users/inventory items.
+
+
+### Points covered
+1. Application does work.
+2. Have covered all the required cases, of course there is scope for covering many more corner cases to make it prod ready.
+3. Basic test coverage, huge scope for improvement but tried adding as much possible.
+4. clean code.
+5. Custom exception handling.
